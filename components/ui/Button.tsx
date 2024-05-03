@@ -1,22 +1,17 @@
-import Link from "next/link";
-
 export type ButtonProps = {
-  text: string;
-  href?: string;
+  children: React.ReactNode;
   onClick?: () => void;
 };
 
-function Button({ text, href, onClick }: ButtonProps) {
-  const button = (
+function Button({ children, onClick }: ButtonProps) {
+  return (
     <button
-      onClick={href ? () => {} : onClick}
+      onClick={onClick}
       className="px-8 w-fit min-w-72 py-2 rounded-lg bg-gradient-to-r from-violet-500 to-blue-700 text-white hover:bg-none hover:bg-blue-700 hover:scale-105 transition-transform"
     >
-      {text}
+      {children}
     </button>
   );
-
-  return href ? <Link href={href}>{button}</Link> : button;
 }
 
 export default Button;

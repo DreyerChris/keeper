@@ -1,7 +1,7 @@
 "use client";
 import Button from "@/components/ui/Button";
 import Input from "@/components/ui/Input";
-import { redirect, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 function Sync() {
@@ -10,7 +10,6 @@ function Sync() {
   const router = useRouter();
 
   const submit = () => {
-    console.log(syncCode === "pink-elephant-123");
     if (syncCode === "pink-elephant-123") {
       router.push(`/sync/${syncCode}`);
     } else {
@@ -32,7 +31,7 @@ function Sync() {
           onChange={(e) => setSyncCode(e)}
           error={error}
         />
-        <Button text="Continue" onClick={() => submit()} />
+        <Button onClick={() => submit()}>Continue</Button>
       </div>
     </main>
   );
