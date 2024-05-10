@@ -7,7 +7,7 @@ import { NextThemeProvider, useRootTheme } from '@tamagui/next-theme'
 import { useServerInsertedHTML } from 'next/navigation'
 import React from 'react'
 import { StyleSheet } from 'react-native'
-import { config, LandingLayout, TamaguiProvider as TamaguiProviderOG } from '@my/ui'
+import { config, TamaguiProvider as TamaguiProviderOG } from '@my/ui'
 
 export const TamaguiProvider = ({ children }: { children: React.ReactNode }) => {
   const [theme, setTheme] = useRootTheme()
@@ -38,7 +38,7 @@ export const TamaguiProvider = ({ children }: { children: React.ReactNode }) => 
         setTheme(next as any)
       }}
     >
-      <TamaguiProviderOG config={config} themeClassNameOnRoot defaultTheme={theme}>
+      <TamaguiProviderOG config={config} themeClassNameOnRoot defaultTheme="dark">
         {children}
       </TamaguiProviderOG>
     </NextThemeProvider>

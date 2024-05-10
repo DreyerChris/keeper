@@ -1,27 +1,13 @@
-import { ChangeEvent } from "react";
-import Status from "./Status";
+import { YStack, Input as TamaguiInput, InputProps } from 'tamagui'
+import FormError from './FormError'
 
-export type InputProps = {
-  value: string;
-  label: string;
-  name: string;
-  error: string;
-  onChange: (e: string) => void;
-};
-
-function Input({ value, label, name, error, onChange }: InputProps) {
+export const Input = (props: InputProps & { error: string }) => {
   return (
-    <div className="w-full h-auto flex flex-col space-y-2">
-      <label htmlFor={name}>{label}</label>
-      <input
-        className="px-4 py-2 border-solid border-stone-900 border rounded-lg"
-        name={name}
-        value={value}
-        onChange={(e) => onChange(e.target.value)}
-      ></input>
-      {error && <Status type="error">{error}</Status>}
-    </div>
-  );
+    <YStack gap="$3" width="100%">
+      <TamaguiInput {...props} />
+      {props.error && <FormError>{props.error}</FormError>}
+    </YStack>
+  )
 }
 
-export default Input;
+export default Input
