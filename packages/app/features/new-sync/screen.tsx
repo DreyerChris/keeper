@@ -1,8 +1,8 @@
-import { H4, YStack, Button, Disclaimer, Stack, Input } from '@my/ui'
+import { H4, YStack, Button, Disclaimer, Stack, Input, Badge } from '@my/ui'
 import { useState } from 'react'
 import { useRouter } from 'solito/navigation'
 
-export function SyncScreen() {
+export function NewSyncScreen() {
   const [syncCode, setSyncCode] = useState('')
   const [error, setError] = useState('')
   const router = useRouter()
@@ -18,16 +18,13 @@ export function SyncScreen() {
   return (
     <YStack jc="space-between" ai="center" mt="$10" gap="$10">
       <H4 ta="center" maw={600} color="$gray7Light" $sm={{ maxWidth: '90%' }}>
-        Enter your sync code to retrieve your stored strings and files on this device
+        Your new sync code is:
+      </H4>
+      <Badge type='success'>pink-elephant-123</Badge>
+      <H4 ta="center" maw={600} color="$gray7Light" $sm={{ maxWidth: '90%' }}>
+        Enter a password for your newly generated sync code, you will need it to authenticate yourself later
       </H4>
       <YStack jc="center" ai="center" f={1} gap="$5" w="$20" $sm={{ width: '80%' }}>
-        <Input
-          flex={1}
-          size="$5"
-          placeholder="Enter sync code"
-          value={syncCode}
-          onChange={(e) => setSyncCode(e.nativeEvent.text)}
-        />
         <Input
           flex={1}
           secureTextEntry={true}

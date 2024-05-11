@@ -1,4 +1,4 @@
-import { Disclaimer, Input, Label, Stack, TextArea, YStack, Badge } from '@my/ui'
+import { Disclaimer, Input, Label, Stack, TextArea, YStack, Badge, Text } from '@my/ui'
 import { useState } from 'react'
 
 export function HomeScreen() {

@@ -18,7 +18,7 @@ export function LandingScreen() {
             </Button>
           </Form.Trigger>
         </Form>
-        <Form onSubmit={() => router.push('/sync')}>
+        <Form onSubmit={() => router.push('/new-sync')}>
           <Form.Trigger asChild>
             <Button href="/sync" theme="purple" f={1}>
               Create new sync code

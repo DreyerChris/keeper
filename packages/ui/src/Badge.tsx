@@ -1,4 +1,4 @@
-import { Stack } from 'tamagui'
+import { XStack, Text} from 'tamagui'
 
 export type BadgeProps = {
   type: 'success'
@@ -11,15 +11,15 @@ export const Badge = ({ type, children }: BadgeProps) => {
     case 'success': {
       colorProps = {
         color: '$green10Dark',
-        backgroundColor: '$green4Dark',
+        backgroundColor: '$green2Dark',
       }
     }
   }
 
   return (
-    <Stack {...colorProps} px="$5" py="$1" br="$3">
-      {children}
-    </Stack>
+    <XStack {...colorProps} px="$5" py="$2" br="$3">
+      <Text {...colorProps}>{children}</Text>
+    </XStack>
   )
 }
 
